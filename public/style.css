@@ -1,0 +1,23 @@
+body {
+    margin: 40px;
+}
+
+.product {
+    background-color: #90c0e0;
+}
+
+.product-titles {
+    background-color: #70d0a0;
+}
+
+.cart-titles {
+    background-color: #a0b080;
+}
+
+.cart-items {
+    background-color: #e0e090;
+}
+
+.cart-total {
+    background-color: #F0A520;    
+}

@@ -1,11 +1,24 @@
 {
   "name": "onlineshopping-eidosoft",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "author": "Samir al-Eido",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.0",
+    "mongojs": "^2.4.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eidosam/onlineshopping-eidosoft.git"
+  },
+  "bugs": {
+    "url": "https://github.com/eidosam/onlineshopping-eidosoft/issues"
+  },
+  "homepage": "https://github.com/eidosam/onlineshopping-eidosoft#readme",
+  "description": ""
 }

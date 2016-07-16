@@ -1,0 +1,47 @@
+<hr>
+<div id="products">
+<h2>Products</h2>
+<p>Here is the list of products</p>
+<div class="row product-titles">
+<div class="col-xs-1">Id</div>
+<div class="col-xs-3">Name</div>
+<div class="col-xs-2">Brand</div>
+<div class="col-xs-2">Price</div>
+<div class="col-xs-2">Category</div>
+<div class="col-xs-2">Cart</div>
+</div>
+
+<div ng-repeat="product in store.products" class="row product">
+<div class="col-xs-1"><a href="/#/product/{{product.productId}}">{{product.productId}}</a></div>
+<div class="col-xs-3">{{product.productName}}</div>
+<div class="col-xs-2">{{product.productBrand}}</div>
+<div class="col-xs-2">{{product.productPrice}}</div>
+<div class="col-xs-2"><a href="/#/category/{{product.category}}">{{product.category | getCategoryNameFromId : store.categories}}</a></div>
+<div class="col-xs-2"><a ng-click="store.addItem(product.productId)">Add</a></div>
+</div>
+
+</div>
+<hr>
+<div id="cart">
+<h2>Shopping Cart</h2>
+<p>Here is the list of products in your cart</p>
+<div class="row cart-titles">
+<div class="col-xs-4">Item</div>
+<div class="col-xs-3">Amount</div>
+<div class="col-xs-3">Total</div>
+<div class="col-xs-2">Ops</div>
+</div>
+
+<div ng-repeat="item in store.cartItems">
+<div ng-init="total = 90; product = (item.productId | getProductById : store.products)" class="row cart-items">
+<div class="col-xs-4">{{product.productBrand}} {{product.productName}}</div>
+<div class="col-xs-3">{{item.count}} * {{product.productPrice}}</div>
+<div class="col-xs-3">{{item.count * product.productPrice}}</div>
+<div class="col-xs-2"><a ng-click="store.removeItem(item.productId)">Remove</a></div>
+</div>
+</div>
+<div class="row cart-total">
+<div class="col-xs-7">Total:</div>
+<div class="col-xs-3">{{store.cartTotal()}}</div>
+</div>
+</div>
